@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        {% block head %}
+        <link rel="stylesheet" href="css/style.css"/>
+        <title> {% block title %}{% endblock %} </title> 
+        {% endblock %}
+    </head>
+    <body>
+        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="footer">
+            {% block footer %}
+            &copy; Copyright 2016 by Jiaquan Fang.
+            {% endblock %}
+        </div>
+    </body>
+</html>
+
