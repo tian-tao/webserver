@@ -11,6 +11,8 @@ logger = logging.getLogger(__name__)
 
 logger = logging.getLogger(__name__)
 
+logger = logging.getLogger(__name__)
+
 class WeChatTokenHandler(BaseHandler):
 
     def get(self):
