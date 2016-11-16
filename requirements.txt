@@ -1,6 +1,4 @@
-BeautifulSoup==3.2.1
-gunicorn==19.6.0
-jieba==0.38
 Jinja2==2.8
+storm==0.20
 tornado==4.3
-tornado-jinja2==0.2.4
+tornado_jinja2==0.2.4
