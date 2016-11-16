@@ -24,7 +24,7 @@ class WeChatTokenHandler(BaseHandler):
         hashcode = sha1.hexdigest()
 
         logger.info("nonce: " + nonce)
-        logger.infod("timestamp: " + timestamp)
+        logger.info("timestamp: " + timestamp)
         logger.info("hashcode: " + hashcode)
         logger.info("signature: " + signature)
         logger.info("echostr: " + echostr)
