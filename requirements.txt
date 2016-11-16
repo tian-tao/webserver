@@ -2,3 +2,4 @@ Jinja2==2.8
 storm==0.20
 tornado==4.3
 tornado_jinja2==0.2.4
+gunicorn==19.6.0
