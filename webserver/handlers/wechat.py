@@ -5,6 +5,7 @@ import hashlib
 import logging
 from handlers.base import BaseHandler
 import xml.etree.ElementTree
+import time
 
 logger = logging.getLogger(__name__)
 
@@ -31,20 +32,24 @@ class WeChatTokenHandler(BaseHandler):
         logger.info("echostr: " + echostr)
 
         if hashcode == signature:
-            return echostr
+            self.write(echostr)
+            self.flush()
 
     def post(self):
-        request_data = self.request.body
+        try:
+            request_data = self.request.body
 
-        xml_obj = xml.etree.ElementTree.fromstring(request_data)
+            xml_obj = xml.etree.ElementTree.fromstring(request_data)
 
-        content = xml_obj.find("Content").text
-        msg_type = xml_obj.find("MsgType").text
-        from_user = xml_obj.find("FromUserName").text
-        to_user = xml_obj.find("ToUserName").text
+            content = xml_obj.find("Content").text
+            msg_type = xml_obj.find("MsgType").text
+            from_user = xml_obj.find("FromUserName").text
+            to_user = xml_obj.find("ToUserName").text
 
-        self.render("reply_text.xml", from_user=from_user, to_user=to_user,
-                    msg_type=msg_type, content=content)
-
+            self.render("reply_text.xml", from_user=to_user, to_user=from_user,
+                        msg_type=msg_type, content=content, 
+                        create_time=int(time.time()))
+        except Exception as e:
+            logger.error(repr(e))
 
 

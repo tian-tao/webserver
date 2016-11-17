@@ -39,7 +39,8 @@ else:
     DEPLOYMENT = DeploymentType.SOLO
 
 
-jinja2_env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_ROOT), autoescape=False)
+jinja2_env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_ROOT),
+                                autoescape=False)
 jinja2_loader = Jinja2Loader(jinja2_env)
 
 settings = {}
