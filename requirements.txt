@@ -1,5 +1,13 @@
 Jinja2==2.8
+requests==2.8.1
 storm==0.20
 tornado==4.3
 tornado_jinja2==0.2.4
+Twisted==16.4.1
+xlrd==0.9.4
+beautifulsoup4==4.5.1
+pyquery==1.2.17
+selenium==3.0.1
+xlutils==2.0.0
+xlwt==1.1.2
 gunicorn==19.6.0
