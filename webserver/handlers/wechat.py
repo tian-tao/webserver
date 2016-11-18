@@ -6,10 +6,10 @@ import logging
 from handlers.base import BaseHandler
 import xml.etree.ElementTree
 import time
+from urllib import urlencode
+from urllib import unquote
 
-logger = logging.getLogger(__name__)
-
-logger = logging.getLogger(__name__)
+from parser.main import get_crawled_result
 
 logger = logging.getLogger(__name__)
 
@@ -50,9 +50,13 @@ class WeChatTokenHandler(BaseHandler):
             from_user = xml_obj.find("FromUserName").text
             to_user = xml_obj.find("ToUserName").text
 
+            url_params = urlencode({
+                "link": content
+            })
+
             self.render("reply_url.xml", from_user=to_user, to_user=from_user,
                     title="Test", description="test", picurl="http://",
-                    url="http://45.62.98.209/wechat/h5")
+                    url="http://10.106.161.146:8000/h5?" + url_params)
             # self.render("reply_text.xml", from_user=from_user, to_user=to_user,
                     # content=content)
 
@@ -62,4 +66,6 @@ class WeChatTokenHandler(BaseHandler):
 class WeChatH5Handler(BaseHandler):
 
     def get(self):
+        link = unquote(self.get_argument("link"))
+        logger.info("received link:" + link)
         self.render("index.html")

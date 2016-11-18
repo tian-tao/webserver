@@ -40,10 +40,4 @@ def get_price(soup):
         price = filter_price(soup, "em", "tb-rmb-num")
     return price
 
-if __name__ == "__main__":
-    url = "https://item.taobao.com/item.htm?spm=a230r.1.14.237.ogQK1s&id=523362730050&ns=1&abbucket=8#detail"
-    # html = crawl(url)
-    soup = BeautifulSoup(open("../file/full_page/page.tmp"))
-    # soup = BeautifulSoup(html)
-    get_price(soup, url)
 

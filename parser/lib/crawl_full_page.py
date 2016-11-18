@@ -2,7 +2,7 @@
 import socket
 import urllib2
 import sys
-sys.path.append('../')
+# sys.path.append('../')
 # import parser.config as config
 import config
 import re
