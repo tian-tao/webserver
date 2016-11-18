@@ -3,7 +3,7 @@ import datastore
 
 class CommodityStore(datastore.DataStore):
     def __init__(self, db_url):
-        super(Commodity, self).__init__(db_url)
+        super(CommodityStore, self).__init__(db_url)
 
     def create_commodity(self, commodity):
         self.store.add(commodity)
