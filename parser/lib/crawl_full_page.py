@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import socket
 import urllib2
+import sys
+sys.path.append('../')
+# import parser.config as config
 import config
 import re
 from selenium.common.exceptions import TimeoutException
@@ -36,8 +39,8 @@ def crawl(url, exe_js = True, fail_time=0):
             driver = config.DRIVER
             driver.get(url)
             WebDriverWait(driver, timeout).until(
-                EC.presence_of_element_located((By.ID, "content"))
-                # EC.presence_of_element_located((By.ID, "J_TabRecommends"))
+                # EC.presence_of_element_located((By.ID, "content"))
+                EC.presence_of_element_located((By.ID, "J_TabRecommends"))
             )
             result = get_recommends(driver, config.MAX_TRY)
             if result :

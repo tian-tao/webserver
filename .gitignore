@@ -8,3 +8,5 @@ source
 *.list
 *.txt
 *.log
+.cache
+page.tmp.*
