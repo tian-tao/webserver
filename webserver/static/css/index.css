@@ -1,0 +1,137 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+#top{
+	width: 100%;
+	height: 0.8rem;
+}
+.tab-wrap{
+	width: 5rem;
+	margin: 0.5rem auto;
+	display: flex;
+}
+.tab-wrap .tab{
+	width: 2.5rem;
+	height: 0.7rem;line-height: 0.7rem;
+	text-align: center;
+	font-size: 0.3rem;
+}
+.left-tab{
+	border-top-left-radius:3.5em;
+	border-bottom-left-radius:3.5em;
+	border-top: 1px solid #6ccffd;
+	border-bottom: 1px solid #6ccffd;
+	border-left: 1px solid #6ccffd;
+	color: #6ccffd;
+	box-sizing:border-box;
+	
+}
+.right-tab{
+	border-top-right-radius:3.5em;
+	border-bottom-right-radius:3.5em;
+	border-left: none;
+	background: #28b0f0;
+	color: white;
+}
+#body{
+	width: 100%;
+}
+.radar{
+	width: 100%;
+	height: 5.4rem;
+}
+.radar #main{
+	width: 320px;
+	height:320px;
+	/*margin: 0 auto;*/
+}
+.radar-title{
+	width: 100%;
+	height: 0.5rem;
+	background: #f9f9f9;
+	text-align: center;
+	margin-top: 0.3rem;
+}
+.radar-title p{
+	color: #8f8f8f;
+	height: 0.5rem;line-height: 0.5rem;
+	font-size: 0.22rem;
+	
+}
+#footer{
+	width: 100%;
+}
+.bar{
+	width: 100%;
+	height: 0.7rem;
+	display: flex;
+	margin-top: 0.2rem;
+	
+}
+.bar-title{
+	width: 30%;
+	height:0.7rem;line-height: 0.7rem;
+	text-align: center;
+	color: #7f7f7f;
+	font-size: 0.26rem;
+}
+.bar-img{
+	width: 3.4rem;
+	height: 0.7rem;line-height: 0.7rem;
+}
+.bar-outer{
+	width: 3.4rem;
+	height: 0.14rem;
+	background: #f3f3f3;
+	margin-top: 0.26rem;
+	position: relative;
+	border-top-left-radius:7px;
+	border-bottom-left-radius:7px;
+	border-top-right-radius:7px;
+	border-bottom-right-radius:7px;
+}
+
+.bar-inner{
+	
+	height: 100%;
+	
+	display: block;
+	border-top-left-radius:7px;
+	border-bottom-left-radius:7px;
+	border-top-right-radius:7px;
+	border-bottom-right-radius:7px;
+	position: absolute;left: 0;top: 0;
+}
+.bar-inner-first{
+	width: 60%;
+	background: #1ac0c5;
+}
+.bar-inner-sec{
+	width: 20%;
+	background: #fd6749;
+}
+.bar-grade{
+	height: 0.7rem;
+}
+.bar-grade-p{
+	margin-top: 0.26rem;
+	margin-left: 0.2rem;
+}
+.bar-grade-p-first{
+	color: #1AC0C5;
+}
+.bar-grade-p-sec{
+	color: #FD6749;
+}
+#footer .button{
+	width: 2.2rem;
+	height: 0.53rem;
+	border: 1px solid #8cdbff;
+	color: #8cdbff;
+	text-align: center;
+	line-height: 0.53rem;
+	margin: 0.4rem auto;
+	font-size: 0.26rem;
+}

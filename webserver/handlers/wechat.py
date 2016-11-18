@@ -48,10 +48,16 @@ class WeChatTokenHandler(BaseHandler):
             from_user = xml_obj.find("FromUserName").text
             to_user = xml_obj.find("ToUserName").text
 
-            self.render("reply_text.xml", from_user=to_user, to_user=from_user,
-                        msg_type=msg_type, content=content, 
-                        create_time=int(time.time()))
+            self.render("reply_url.xml", from_user=to_user, to_user=from_user,
+                    title="Test", description="test", picurl="http://",
+                    url="http://45.62.98.209/wechat/h5")
+            # self.render("reply_text.xml", from_user=from_user, to_user=to_user,
+                    # content=content)
+
         except Exception as e:
             logger.error(repr(e))
 
+class WeChatH5Handler(BaseHandler):
 
+    def get(self):
+        self.render("index.html")
