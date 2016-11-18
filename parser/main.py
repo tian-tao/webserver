@@ -24,10 +24,14 @@ from lib.writetofile import write_to_txt
 import commands
 from lib.get_product_price import get_price
 from lib.get_shop_rate import get_shop_rate
-
+from lib.get_shop_qualification import get_qualification
 from bs4 import BeautifulSoup
 import json
 
+import os
+ROOT = os.path.dirname(os.path.abspath(__file__))
+print ROOT
+path = lambda *a: os.path.join(ROOT, *a)
 
 def test():
     urls = get_urls()
@@ -68,6 +72,8 @@ def main():
     # soup = BeautifulSoup(html)
     soup = BeautifulSoup(open("file/full_page/page.tmp.taobao"))
     soup.prettify()
+    #资质
+    qualification = get_qualification(soup)
 
     #价格
     # price = get_price(soup)
@@ -103,9 +109,9 @@ def main():
 
 if __name__ == "__main__":
     # try:
-    #     main()
-        url = "https://detail.tmall.com/item.htm?spm=a230r.1.14.159.ogQK1s&id=536443315513&ns=1&abbucket=8"
-        print str(get_crawled_result("we"))
+        main()
+    #     url = "https://detail.tmall.com/item.htm?spm=a230r.1.14.159.ogQK1s&id=536443315513&ns=1&abbucket=8"
+    #     print str(get_crawled_result("we"))
         # test()
     # except Exception as e:
     #     print e
