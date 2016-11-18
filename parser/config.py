@@ -2,6 +2,14 @@
 
 from selenium import webdriver
 
+
+#评论数据存储文件
+COMMENTS_FILE = 'file/comments.list'
+
+#评论最大页码
+MAX_PAGE_SIZE = 10
+
+
 # 加载配置
 SERVICE_ARGS = [
     '--load-images=false',

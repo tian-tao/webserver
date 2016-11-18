@@ -92,10 +92,10 @@ def get_more_link():
     parse_html(html)
 
 
-def find_urls():
-    print u'请输入要提取链接的关键字'
-    keyword = raw_input().decode(sys.stdin.encoding or locale.getpreferredencoding(True))
-    
+def find_urls(keyword):
+    if not keyword :
+        print u'请输入要提取链接的关键字'
+        keyword = raw_input().decode(sys.stdin.encoding or locale.getpreferredencoding(True))
     print u'您要提取的关键字是', keyword
     print u'正在开始提取...'
     try:
