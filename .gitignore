@@ -3,3 +3,10 @@
 *.log
 *.png
 .ropeproject
+full_page
+source
+*.list
+*.txt
+*.log
+.cache
+page.tmp.*

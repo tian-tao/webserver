@@ -2,6 +2,13 @@
 
 from selenium import webdriver
 
+#评论数据存储文件
+COMMENTS_FILE = 'file/comments.list'
+
+#评论最大页码
+MAX_PAGE_SIZE = 10
+
+
 # 加载配置
 SERVICE_ARGS = [
     '--load-images=false',
@@ -19,6 +26,7 @@ TIMEOUT = 30
 MAX_TRY = 6
 # 读取的URL文件
 FROM_FILE = 'file/urls.txt'
+
 # 写入的文件
 TO_TXT_FILE = 'file/result.txt'
 # 写入的EXCEL文件

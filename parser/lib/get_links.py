@@ -92,14 +92,14 @@ def get_more_link():
     parse_html(html)
 
 
-def find_urls():
-    print u'请输入要提取链接的关键字'
-    keyword = raw_input().decode(sys.stdin.encoding or locale.getpreferredencoding(True))
-    
+def find_urls(keyword):
+    if not keyword :
+        print u'请输入要提取链接的关键字'
+        keyword = raw_input().decode(sys.stdin.encoding or locale.getpreferredencoding(True))
     print u'您要提取的关键字是', keyword
     print u'正在开始提取...'
     try:
-        clear_file()
+        # clear_file()
         html = get_results(keyword)
         parse_html(html)
         for i in range(1, l_config.PAGE + 1):
@@ -108,10 +108,10 @@ def find_urls():
     except Exception:
         print u'网络错误，请重试'
 
-        with open(l_config.FILE, 'w') as f:
-            f.write(l_config.CONTENT)
-            f.close()
-            print u'出现异常，已还原原内容'
+        # with open(l_config.FILE, 'w') as f:
+        #     # f.write(l_config.CONTENT)
+        #     f.close()
+        #     print u'出现异常'
     finally:
         l_config.DRIVER.close()
         print u'采集结束, 共采集', len(link_list), u'个链接'
