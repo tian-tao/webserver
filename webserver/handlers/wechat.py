@@ -9,7 +9,7 @@ import time
 from urllib import urlencode
 from urllib import unquote
 
-import parser.main
+from parser.main import get_crawled_result
 
 logger = logging.getLogger(__name__)
 

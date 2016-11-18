@@ -26,6 +26,4 @@ def get_days(max_day):
 
     return dates
 
-if __name__ == "__main__":
 
-    print get_days(10)
