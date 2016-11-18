@@ -16,5 +16,5 @@ def SentimentModel(object):
 
 
     def inference(self, data):
-
+        pass
 

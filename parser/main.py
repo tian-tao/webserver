@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
+import site
+import os
+ROOT = os.path.dirname(os.path.abspath(__file__))
+site.addsitedir(ROOT)
 
 from lib.get_product_comments import get_comments
 from lib.get_product_comments import get_itemId_sellerId
 import socket
 import urllib2
-import config
+import parser.config
 import re
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By

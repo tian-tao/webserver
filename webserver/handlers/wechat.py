@@ -7,9 +7,7 @@ from handlers.base import BaseHandler
 import xml.etree.ElementTree
 import time
 
-logger = logging.getLogger(__name__)
-
-logger = logging.getLogger(__name__)
+import parser.main
 
 logger = logging.getLogger(__name__)
 
