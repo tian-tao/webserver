@@ -9,6 +9,7 @@ from parser.lib.get_product_comments import get_comments
 from parser.lib.writetofile import write_to_txt
 from lib.get_avg_price import get_avg_price
 from lib.get_shop_rate import get_shop_rate
+from lib.get_other_info import get_transaction_rate
 
 def batch_test():
     urls = get_urls()
@@ -25,6 +26,13 @@ def test_avg_price():
         json_res = get_avg_price(BeautifulSoup(html))
         print json_res
 
+def test_trans_rate():
+    urls = get_urls()
+    for url in urls:
+        html = crawl(url)
+        json_res = get_transaction_rate(BeautifulSoup(html))
+        print json_res
+
 def single_test():
 
         url = "http://e22a.com/h.YLdb8E?cv=AAZeSonL&sm=398363"  # tmall
@@ -33,11 +41,13 @@ def single_test():
         url = "https://rate.taobao.com/user-rate-2a6429ee35dac9c8fc1ec33ed948f2a6.htm" #summary taobao shop
         url = 'https://item.taobao.com/item.htm?spm=a230r.1.14.21.8WXAoz&id=540980670444&ns=1&abbucket=8#detail'
         html = crawl(url)
-        # print html
+        print html
         soup = BeautifulSoup(html)
-        # soup = BeautifulSoup(open("file/page.tmp.tmall"))
-        print get_avg_price(soup)
-        print get_shop_rate(soup)
+        # soup = BeautifulSoup(open("file/page.tmp.taobao"))
+        # print soup
+        print get_transaction_rate(soup)
+        # print get_avg_price(soup)
+        # print get_shop_rate(soup)
         # soup.prettify()
         # 资质
         # qualification = get_qualification(soup)
@@ -49,4 +59,5 @@ def single_test():
 if __name__ == '__main__':
     # single_test()
     batch_test()
+    # test_trans_rate()
     # test_avg_price()
