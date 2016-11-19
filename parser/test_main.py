@@ -10,11 +10,11 @@ from parser.lib.writetofile import write_to_txt
 from lib.get_avg_price import get_avg_price
 from lib.get_shop_rate import get_shop_rate
 from lib.get_other_info import get_transaction_rate
-
+import random
 def batch_test():
     urls = get_urls()
     for url in urls:
-        json_res = get_crawled_result(url)
+        json_res = get_crawled_result(url, False)
         # json_res = get_comments(url)
         print json_res
 
