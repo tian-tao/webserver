@@ -14,7 +14,7 @@ import random
 def batch_test():
     urls = get_urls()
     for url in urls:
-        json_res = get_crawled_result(url, False)
+        json_res = get_crawled_result(url, True)
         # json_res = get_comments(url)
         print json_res
 
@@ -40,6 +40,7 @@ def single_test():
         url = "https://item.taobao.com/item.htm?spm=a230r.1.14.237.ogQK1s&id=523362730050&ns=1&abbucket=8#detail"
         url = "https://rate.taobao.com/user-rate-2a6429ee35dac9c8fc1ec33ed948f2a6.htm" #summary taobao shop
         url = 'https://item.taobao.com/item.htm?spm=a230r.1.14.21.8WXAoz&id=540980670444&ns=1&abbucket=8#detail'
+        url = 'https://detail.tmall.com/item.htm?spm=a230r.1.14.13.7EHqR4&id=43162747996&cm_id=140105335569ed55e27b&abbucket=8'
         html = crawl(url)
         print html
         soup = BeautifulSoup(html)
